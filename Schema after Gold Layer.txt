@@ -1,0 +1,238 @@
+Schema after "Gold Layer" data transformation
+
+## Dimension Tables:
+
+1. Branch dim
+
+root
+ |-- branch_key: integer (nullable = false)
+ |-- branch_id: integer (nullable = true)
+ |-- branch_name: string (nullable = true)
+ |-- city: string (nullable = true)
+ |-- state: string (nullable = true)
+ |-- branch_location: string (nullable = true)
+ |-- branch_region: string (nullable = true)
+ |-- ifsc_code: string (nullable = true)
+ |-- opened_date: date (nullable = true)
+ |-- branch_open_year: integer (nullable = true)
+ |-- branch_age_years: integer (nullable = true)
+ |-- branch_age_band: string (nullable = true)
+
+
+
+2. Cards dim
+
+root
+ |-- card_key: integer (nullable = false)
+ |-- card_id: integer (nullable = true)
+ |-- customer_id: integer (nullable = true)
+ |-- account_id: integer (nullable = true)
+ |-- card_type: string (nullable = true)
+ |-- issue_date: date (nullable = true)
+ |-- expiry_date: date (nullable = true)
+ |-- credit_limit: integer (nullable = true)
+ |-- status: string (nullable = true)
+ |-- card_issue_year: integer (nullable = true)
+ |-- card_issue_yr-mon: string (nullable = true)
+ |-- card_age_years: integer (nullable = true)
+ |-- card_age_band: string (nullable = true)
+ |-- card_expire_year: integer (nullable = true)
+ |-- card_expire_yr-mon: string (nullable = true)
+ |-- days_to_expiry: integer (nullable = true)
+ |-- card_expiry_status: string (nullable = true)
+ |-- is_expired: boolean (nullable = true)
+ |-- credit_limit_band: string (nullable = true)
+
+
+
+3. Accounts dim
+
+root
+ |-- account_key: integer (nullable = false)
+ |-- account_id: integer (nullable = true)
+ |-- customer_id: integer (nullable = true)
+ |-- branch_id: integer (nullable = true)
+ |-- account_type: string (nullable = true)
+ |-- balance: double (nullable = true)
+ |-- open_date: date (nullable = true)
+ |-- status: string (nullable = true)
+ |-- acc_open_year: integer (nullable = true)
+ |-- acc_open_yr-mon: string (nullable = true)
+ |-- acc_age_band: string (nullable = true)
+ |-- account_type_group: string (nullable = true)
+ |-- balance_band: string (nullable = true)
+
+
+4. Employee dim
+
+root
+ |-- employee_key: integer (nullable = false)
+ |-- employee_id: integer (nullable = true)
+ |-- name: string (nullable = true)
+ |-- branch_id: integer (nullable = true)
+ |-- role: string (nullable = true)
+ |-- hire_date: date (nullable = true)
+ |-- salary: float (nullable = true)
+ |-- emp_hire_year: integer (nullable = true)
+ |-- emp_hire_yr-mon: string (nullable = true)
+ |-- emp_tenure_yrs: integer (nullable = true)
+ |-- emp_tenure_band: string (nullable = true)
+ |-- emp_salary_band: string (nullable = true)
+ |-- emp_role_group: string (nullable = true)
+
+
+5. Customers dim
+
+root
+ |-- customer_key: integer (nullable = false)
+ |-- customer_id: integer (nullable = true)
+ |-- name: string (nullable = true)
+ |-- gender: string (nullable = true)
+ |-- date_of_birth: date (nullable = true)
+ |-- city: string (nullable = true)
+ |-- state: string (nullable = true)
+ |-- customer_location: string (nullable = true)
+ |-- customer_region: string (nullable = true)
+ |-- customer_age: integer (nullable = true)
+ |-- age_band: string (nullable = true)
+ |-- phone: long (nullable = true)
+ |-- email: string (nullable = true)
+ |-- customer_occupation: string (nullable = true)
+ |-- annual_income: integer (nullable = true)
+ |-- income_band: string (nullable = true)
+ |-- join_date: date (nullable = true)
+ |-- customer_join_year: integer (nullable = true)
+ |-- join_year_month: string (nullable = true)
+ |-- customer_tenure_years: integer (nullable = true)
+ |-- customer_tenure_band: string (nullable = true)
+ |-- credit_score: integer (nullable = true)
+ |-- credit_score_band: string (nullable = true)
+ |-- credit_risk_category: string (nullable = true)
+
+
+6. Date dim
+
+root
+ |-- date_key: integer (nullable = true)
+ |-- date: date (nullable = false)
+ |-- year: integer (nullable = false)
+ |-- quarter: string (nullable = false)
+ |-- month_number: integer (nullable = false)
+ |-- month_name: string (nullable = false)
+ |-- week: integer (nullable = false)
+ |-- day: integer (nullable = false)
+ |-- day_name: string (nullable = false)
+ |-- weekend_flag: integer (nullable = false)
+ |-- month_year: string (nullable = false)
+ |-- financial_year: string (nullable = false)
+ |-- financial_quarter: string (nullable = false)
+
+
+## Fact Tables:
+
+1. Fact Transactions
+
+root
+ |-- transaction_key: integer (nullable = false)
+ |-- transaction_id: integer (nullable = true)
+ |-- account_id: integer (nullable = true)
+ |-- txn_date: date (nullable = true)
+ |-- txn_type: string (nullable = true)
+ |-- amount: double (nullable = true)
+ |-- channel: string (nullable = true)
+ |-- merchant_category: string (nullable = true)
+ |-- txn_year: integer (nullable = true)
+ |-- txn_yr-mon: string (nullable = true)
+ |-- txn_quarter: string (nullable = true)
+ |-- txn_day_name: string (nullable = true)
+ |-- txn_day_type: string (nullable = true)
+ |-- is_weekend_flag: integer (nullable = true)
+ |-- amount_band: string (nullable = true)
+ |-- is_high_value: integer (nullable = true)
+ |-- txn_type_group: string (nullable = true)
+ |-- txn_direction: string (nullable = true)
+ |-- channel_group: string (nullable = true)
+ |-- merchant_category_group: string (nullable = true)
+
+
+2. Fact Loans
+
+root
+ |-- loan_key: integer (nullable = false)
+ |-- loan_id: integer (nullable = true)
+ |-- customer_id: integer (nullable = true)
+ |-- branch_id: integer (nullable = true)
+ |-- loan_type: string (nullable = true)
+ |-- loan_amount: double (nullable = true)
+ |-- interest_rate: double (nullable = true)
+ |-- term_months: integer (nullable = true)
+ |-- start_date: date (nullable = true)
+ |-- status: string (nullable = true)
+ |-- loan_start_year: integer (nullable = true)
+ |-- loan_start_yr-mon: string (nullable = true)
+ |-- loan_age_months: integer (nullable = true)
+ |-- loan_age_band: string (nullable = true)
+ |-- loan_amount_band: string (nullable = true)
+ |-- interest_rate_band: string (nullable = true)
+ |-- term_band: string (nullable = true)
+ |-- loan_status_group: string (nullable = true)
+ |-- estimated_monthly_emi: double (nullable = true)
+
+
+
+3. Fact Card Transactions
+
+root
+ |-- card_transact_key: integer (nullable = false)
+ |-- card_txn_id: integer (nullable = true)
+ |-- card_id: integer (nullable = true)
+ |-- txn_date: date (nullable = true)
+ |-- merchant_category: string (nullable = true)
+ |-- merchant_category_group: string (nullable = true)
+ |-- amount: double (nullable = true)
+ |-- is_fraud: integer (nullable = true)
+ |-- fraud_status: string (nullable = true)
+ |-- amount_band: string (nullable = true)
+ |-- is_high_value_txn: boolean (nullable = true)
+ |-- fraud_amount_flag: string (nullable = true)
+
+
+4. Fact Loan Payments
+
+root
+ |-- payment_key: integer (nullable = false)
+ |-- payment_id: integer (nullable = true)
+ |-- loan_id: integer (nullable = true)
+ |-- payment_date: date (nullable = true)
+ |-- amount_paid: double (nullable = true)
+ |-- principal_component: double (nullable = true)
+ |-- interest_component: double (nullable = true)
+ |-- late_payment_flag: integer (nullable = true)
+ |-- late_payment_status: string (nullable = true)
+ |-- payment_amount_band: string (nullable = true)
+ |-- principal_percentage: double (nullable = true)
+ |-- interest_percentage: double (nullable = true)
+ |-- payment_component_check: string (nullable = true)
+
+
+5. Fact Support Tickets
+
+root
+ |-- ticket_key: integer (nullable = false)
+ |-- ticket_id: integer (nullable = true)
+ |-- customer_id: integer (nullable = true)
+ |-- issue_type: string (nullable = true)
+ |-- issue_type_group: string (nullable = true)
+ |-- date_opened: date (nullable = true)
+ |-- date_resolved: date (nullable = true)
+ |-- status: string (nullable = true)
+ |-- satisfaction_score: integer (nullable = true)
+ |-- satisfaction_category: string (nullable = true)
+ |-- is_resolved: integer (nullable = true)
+ |-- resolution_days: integer (nullable = true)
+ |-- resolution_time_band: string (nullable = true)
+ |-- ticket_age_days: integer (nullable = true)
+ |-- ticket_age_band: string (nullable = true)
+
+
+
