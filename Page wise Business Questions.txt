@@ -1,0 +1,104 @@
+Page wise Business Questions:
+
+A. Executive Dashboard-
+
+What is the overall size of the customer base?
+How many accounts and cards are active?
+What is the total account balance?
+What is the total transaction value?
+What is the total loan portfolio?
+How is the banking business performing over time?
+Which branches contribute the most business activity?
+What percentage of card transactions are flagged as fraud?
+How is loan repayment performing?
+How many customer-support tickets are being generated?
+
+
+
+B. Customer & Account Dashboard-
+
+How many customers does the bank have?
+What is the customer age distribution?
+Which income groups represent the largest customer base?
+What is the credit-risk distribution?
+How many accounts does each customer maintain?
+Which account types are most popular?
+What is the total balance by account type?
+Which branches have the highest number of customers?
+Which customers maintain the highest balances?
+How does customer acquisition change over time?
+What percentage of customers have multiple banking products?
+Which customer segments generate the highest account activity?
+
+
+C. Card & Transactions Dashboard-
+
+How many cards have been issued?
+How many cards are currently active?
+What is the total card transaction value?
+How many card transactions occur?
+What is the average card transaction amount?
+Which card types have the highest usage?
+Which merchant categories generate the highest spending?
+Which channels are most frequently used?
+How does card spending change over time?
+What percentage of transactions are flagged as fraud?
+Which customers have the highest card usage?
+Which merchant categories have the highest fraud activity?
+What is the distribution of transaction amounts?
+
+
+D. Loan & Loan Payments Dashboard-
+
+What is the total loan portfolio?
+How many loans are active?
+Which loan types have the highest portfolio value?
+What is the average loan amount?
+What is the average interest rate?
+What is the average loan term?
+How much has been collected through loan payments?
+What percentage of payments are late?
+Which loan types have the highest late-payment rate?
+Which branches have the highest loan exposure?
+Which customers have the highest loan exposure?
+How is loan origination changing over time?
+How is loan repayment changing over time?
+What proportion of payments represents principal vs interest?
+Which loans require repayment attention?
+
+
+E. Branch & Employee Dashboard-
+
+How many branches does the bank operate?
+How many employees work across branches?
+Which branches have the highest customer base?
+Which branches manage the most accounts?
+Which branches generate the highest transaction value?
+Which branches have the highest loan portfolio?
+What is the employee count by branch?
+What is the average salary by branch?
+What is the employee-to-customer ratio?
+What is the employee-to-account ratio?
+Which branches have the highest business activity per employee?
+Which regions outperform others?
+How has branch expansion changed over time?
+Which branches require operational attention?
+
+
+F. Support Tickets Dashboard-
+
+How many support tickets are raised?
+How many tickets are open?
+How many tickets are resolved?
+What are the most common customer issues?
+Which customers generate the most tickets?
+What is the average resolution time?
+Which issue types take the longest to resolve?
+What is the customer satisfaction score?
+Which branches have the highest ticket volume?
+Is ticket volume increasing or decreasing?
+What percentage of tickets are resolved?
+Which issues have the lowest satisfaction?
+Which customers have repeated support issues?
+How many tickets remain unresolved?
+Are high ticket volumes associated with particular customer segments?
