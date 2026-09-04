@@ -1,0 +1,96 @@
+Page wise filters and kpis :
+
+1. executive overview = [Date / Branch / Customer segment / Account type]
+
+< Total Customers/ Total Accounts/ Total Branch/ Total Cards/ Total Loans/ Total Transactions/ Total Support Tickets/ Transaction Value/ Total Card Transactions >
+
+
+
+2. customer and account = [Date / Branch / Customer segment / Account type]
+
+< Total Customers/ Total Accounts/ Accounts per Customer/ Active Accounts/ Multi-Product Customers >
+
+
+
+3. transaction = [Date / Branch / transaction type / Account type]
+
+<Total Transactions/ Transaction Value/ Average Transaction Value/ Transactions per Account/ Transactions per Customer>
+
+
+
+4. loan and payment = [Date / Branch /loan type / loan status]
+
+<Total Loans/ Loan Portfolio (Total Loan Value)/ Average Loan Value/ Active Loan Rate/ Total Loan Payments/ Total Payment Value/ Delayed Payment Rate/ Payment Completion Rate/ Average Payment>
+
+
+
+5. card = [Date / Branch / card type / card status]
+
+<Total Cards/ Cards per Customer/ Card Transactions/ Card Transaction Value/ Average Card Transaction>
+
+
+
+6. branch = [Date / Branch / region]
+
+<Customers/ Accounts/ Transactions/ Transaction Value/ Loans/ Loan Value/ Support Tickets>
+
+
+
+7. customer support = [Date / Branch / ticket category / ticket status]
+
+<Total Tickets/ Tickets per Customer/ Open Tickets/ Closed Tickets/ Average Resolution Time>
+
+
+
+
+
+Dimension and Fact Tables:
+
+Dim_Customer
+Dim_Account
+Dim_Branch
+Dim_Employee
+Dim_Card
+Dim_Date
+
+
+Fact_Transactions
+Fact_Loans
+Fact_Loan_Payments
+Fact_Card_Transactions
+Fact_Support_Tickets
+
+
+
+## Date range with respect to each table:   min_date = "1995-04-01",  max_date = "2030-05-30"
+
+1. accounts= 1/1/2005 to 31/5/2026
+
+2. branch= 1/4/1995 to 26/11/2019
+
+3. card transaction= 1/1/2028 to 30/6/2026
+
+4. card= issue date(1/1/2015 to 31/5/2025) and expiry date(31/12/2019 to 30/5/2030)
+
+5. customer=  date of birth(1/1/1950 to 31/12/2004) and join date(1/1/2005 to 30/11/2025)
+
+6. employee= 3/1/2000 to 31/5/2025
+
+7. loan payment= 1/2/2010 to 31/5/2026
+
+8. loan= 1/1/2010 to 31/5/2025
+
+9. support tickets=  date opened(1/1/2019 to 24/6/2026) and date resolved(1/1/2019 to 12/7/2026)
+
+10. transactions= 1/1/2018 to 30/6/2026
+
+
+
+pages:
+
+1. executive
+2. customer and account
+3. card and transactions (card + card transactions)
+4. loan and loan payments (loan + loan payment)
+5. branch and employee (branch + employee)
+6. support tickets
